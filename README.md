@@ -62,23 +62,19 @@ Introdução de uma exceção personalizada, `CDNaoEncontradoException`, para li
     - Escolha a opção `2` no menu.
     - Insira o nome, preço e autor do produto quando solicitado.
 
-3. **Exibir o Estoque:**
-    - Selecione a opção `1` no menu.
-    - Visualize as informações sobre os cds no estoque.
-
-4. **Pesquisar um CD:**
+3. **Pesquisar um CD:**
     - Escolha a opção `3` no menu.
     - Insira o ID do cd desejado.
 
-5. **Comprar um CD:**
+4. **Comprar um CD:**
     - Selecione a opção `4` no menu.
     - Insira o ID do cd que você deseja comprar.
 
-6. **Remover um CD:**
+5. **Remover um CD:**
     - Escolha a opção `5` no menu.
     - Insira o ID do CD que você deseja remover.
 
-7. **Encerrar o Programa:**
+6. **Encerrar o Programa:**
     - Selecione a opção `0` no menu.
 
 
