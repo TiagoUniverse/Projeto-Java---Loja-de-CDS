@@ -1,21 +1,18 @@
 package entities;
 
-public abstract class Cds {
+public class Cds extends Produto {
 
-    private int id;
+    public Cds(int id, String nome, double valor) {
+        super(id, nome, valor);
+    }
 
-    private String nome;
-
-    private String artista;
-
-    public Cds( String nome, String artista) {
-        this.id = id;
-        this.nome = nome;
-        this.artista = artista;
+    @Override
+    public String toString() {
+        return "Cd:" +
+                "id: " + id  + "\n" +
+                ", nome: " + nome + "\n" +
+                ", valor:" + valor + ". \n" ;
     }
 
 
-    public int gerarId (){
-        return id + 1;
-    }
 }
