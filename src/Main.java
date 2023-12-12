@@ -8,10 +8,10 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        Cds_controller cd_controller = new Cds_controller();
+
+        Cds_controller cd_controller = new Cds_controller(scanner);
 
        cd_controller.menu(scanner);
-
 
 
         scanner.close();
