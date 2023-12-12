@@ -28,7 +28,7 @@ public class Loja {
 
     public void exibirEstoque(){
         if (lista_cds.isEmpty()){
-            System.out.println("A loja está vazia. Por favor, cadastre alguns produtos.");
+            System.out.println("A loja está vazia. Por favor, cadastre alguns produtos. \n");
         } else{
             for (Produto produto : lista_cds) {
                 produto.exibirInfo();
