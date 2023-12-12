@@ -3,9 +3,10 @@ package entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import static sun.util.locale.LocaleUtils.isEmpty;
+
 public class Loja {
 
-    // é uma lista de cds, e nao de produtos
     protected static List<Produto> lista_cds = new ArrayList<>();
 
     protected static int proximoId = 0;
@@ -26,9 +27,14 @@ public class Loja {
     }
 
     public void exibirEstoque(){
-        for (Produto produto : lista_cds) {
-            produto.exibirInfo();
-            System.out.println("");
+        if (lista_cds.isEmpty()){
+            System.out.println("A loja está vazia. Por favor, cadastre alguns produtos.");
+        } else{
+            for (Produto produto : lista_cds) {
+                produto.exibirInfo();
+                System.out.println("");
+            }
         }
+
     }
 }
