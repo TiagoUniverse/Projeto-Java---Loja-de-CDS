@@ -14,7 +14,7 @@ O projeto é organizado em classes distintas para facilitar a manutenção e ext
 
 - **Cds_controller:** Responsável por orquestrar as operações da loja, exibir o menu e processar as escolhas do usuário. Mantém uma instância da classe `LojaCds`.
 
-- **LojaCds:** Gerencia o estoque de cds, armazenando uma lista de produtos. Contém métodos para adicionar, exibir e remover cds, bem como para gerar IDs sequenciais.
+- **Loja:** Gerencia o estoque dos produtos, armazenando uma lista de produtos. Contém métodos para adicionar, exibir e remover cds, bem como para gerar IDs sequenciais.
 
 - **Produto:** Classe abstrata que representa um produto genérico. Possui atributos comuns a todos os produtos, como nome, ID e preço.
 
