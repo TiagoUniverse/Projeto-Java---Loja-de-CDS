@@ -89,6 +89,37 @@ public class Cds_controller {
                 System.out.println("");
                 break;
             case 4:
+                do {
+                    try {
+                        System.out.print("Qual o id do produto que deseja comprar: ");
+                        id = scanner.nextInt();
+                        scanner.nextLine();
+                        validacao = 1;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Tipo de id inválido. Por favor, digite um valor numérico (Ex: 1)");
+                        validacao = 0;
+                        scanner.nextLine();
+                    }
+                } while (validacao == 0);
+
+                Produto produto_buscado = loja.procurar_produto(id);
+                System.out.println("");
+
+                if (produto_buscado != null) {
+                    System.out.println("\n Deseja comprar este produto( S/N): ");
+                    char resposta = scanner.nextLine().toUpperCase().charAt(0);
+
+                    if (resposta == 'S') {
+                        System.out.println("\n Produto comprado! \n");
+
+                        loja.remover_cd(produto_buscado);
+                    } else if (resposta == 'N') {
+                        System.out.println("\n Operação de compra cancelada. \n");
+                    } else {
+                        System.out.println("\n Escolha inválida. Operação de compra cancelada. \n");
+                    }
+                }
+
                 break;
             case 5:
                 do {
@@ -104,17 +135,17 @@ public class Cds_controller {
                     }
                 } while (validacao == 0);
 
-                Produto produto_buscado = loja.procurar_produto(id);
+                Produto produtoRemocao_buscado = loja.procurar_produto(id);
                 System.out.println("");
 
-                if (produto_buscado != null) {
+                if (produtoRemocao_buscado != null) {
                     System.out.println("\n Deseja remover este produto( S/N): ");
                     char resposta = scanner.nextLine().toUpperCase().charAt(0);
 
                     if (resposta == 'S') {
                         System.out.println("\n Removendo produto! \n");
 
-                        loja.remover_cd(produto_buscado);
+                        loja.remover_cd(produtoRemocao_buscado);
                     } else if (resposta == 'N') {
                         System.out.println("\n Operação cancelada. \n");
                     } else {
