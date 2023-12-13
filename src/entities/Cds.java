@@ -2,15 +2,23 @@ package entities;
 
 public class Cds extends Produto {
 
-    public Cds(String nome, double valor) {
+    private  String nome_artista;
+    public Cds(String nome, double valor, String nome_artista) {
         super(nome, valor);
+        this.nome_artista = nome_artista;
+    }
+
+    public String getNome_artista() {
+        return nome_artista;
     }
 
     @Override
-    public void exibirInfo(){
+    public int exibirInfo(){
         System.out.println("Nome: " + getNome());
         System.out.println("ID: " + getId());
         System.out.println("Preço: " + getValor());
+        System.out.println("Nome do artista: " + getNome_artista());
+        return 0;
     }
 
 }

@@ -30,7 +30,12 @@ public class Cds_controller {
 //        System.out.println("================================");
     }
 
+    public void adicionar_cds_iniciais(){
+        loja.adicionar_cd(new Cds("Born To Die", 25, "Lana del rey"));
+    }
+
     public void menu (Scanner scanner){
+        adicionar_cds_iniciais();
         header_inicial();
         int escolha;
         do{
@@ -65,6 +70,26 @@ public class Cds_controller {
                 System.out.println(" \n Cadastro de novo CD com sucesso! \n");
                 break;
             case 3:
+                int validacao = 0;
+                int id = 0;
+                do{
+
+                    try{
+                        System.out.print("Qual o id do produto: ");
+                        id = scanner.nextInt();
+                        scanner.nextLine();
+                        validacao = 1;
+                    } catch(IndexOutOfBoundsException e){
+                        System.out.println("Este id não existe. Por favor, consulte os produtos e pesquise pelo id correto.");
+                        validacao = 0;
+                    }
+
+                } while (validacao == 0);
+
+
+
+                loja.procurar_produto(id);
+                System.out.println("");
                 break;
             case 4:
                 break;

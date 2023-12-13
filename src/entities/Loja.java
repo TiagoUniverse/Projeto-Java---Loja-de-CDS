@@ -1,6 +1,7 @@
 package entities;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 
 import static sun.util.locale.LocaleUtils.isEmpty;
@@ -25,6 +26,21 @@ public class Loja {
         }
         return proximoId;
     }
+
+
+    public Produto procurar_produto(int id){
+        for(Produto produto : lista_cds){
+            if (produto.getId() == id){
+                produto.exibirInfo();
+                return produto;
+            }
+        }
+        System.out.println("O id pesquisado não existe.");
+       return null;
+
+    }
+
+
 
     public void exibirEstoque(){
         if (lista_cds.isEmpty()){

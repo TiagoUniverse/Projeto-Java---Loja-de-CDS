@@ -1,7 +1,5 @@
 package entities;
 
-import static entities.Loja.*;
-
 public abstract class Produto {
 
     protected int id;
@@ -26,5 +24,5 @@ public abstract class Produto {
         return valor;
     }
 
-    public abstract void  exibirInfo();
+    public abstract int exibirInfo();
 }
