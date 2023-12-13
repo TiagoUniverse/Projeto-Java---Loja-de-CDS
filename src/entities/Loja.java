@@ -16,6 +16,10 @@ public class Loja {
         lista_cds.add(cd);
     }
 
+    public void remover_cd (Produto cd){
+        lista_cds.remove(cd);
+    }
+
     public static int gerarProximoID(){
         for (Produto produto : lista_cds ) {
             if (produto.getId() == proximoId ){

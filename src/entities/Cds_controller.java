@@ -73,20 +73,17 @@ public class Cds_controller {
                 int validacao = 0;
                 int id = 0;
                 do{
-
                     try{
                         System.out.print("Qual o id do produto: ");
                         id = scanner.nextInt();
                         scanner.nextLine();
                         validacao = 1;
-                    } catch(IndexOutOfBoundsException e){
-                        System.out.println("Este id não existe. Por favor, consulte os produtos e pesquise pelo id correto.");
+                    } catch(InputMismatchException e){
+                        System.out.println("Tipo de id inválido. Por favor, digite um valor numérico (Ex: 1)");
                         validacao = 0;
+                        scanner.nextLine();
                     }
-
                 } while (validacao == 0);
-
-
 
                 loja.procurar_produto(id);
                 System.out.println("");
@@ -94,6 +91,7 @@ public class Cds_controller {
             case 4:
                 break;
             case 5:
+
                 break;
             case 0:
                 System.out.println("Encerrando o programa.");
