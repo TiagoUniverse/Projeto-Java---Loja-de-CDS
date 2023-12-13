@@ -32,6 +32,10 @@ public class Cds_controller {
 
     public void adicionar_cds_iniciais() {
         loja.adicionar_cd(new Cds("Born To Die", 25, "Lana del rey"));
+        loja.adicionar_cd(new Cds("The Beatles", 75.79, "Beatles"));
+        loja.adicionar_cd(new Cds("Thriller", 80.50, "Michael Jackson"));
+        loja.adicionar_cd(new Cds("Back in Black", 45.70, "AC/DC"));
+        loja.adicionar_cd(new Cds("21", 35.60, "Adele"));
     }
 
     public void menu(Scanner scanner) {
@@ -64,6 +68,7 @@ public class Cds_controller {
         switch (escolha) {
             case 1:
                 loja.exibirEstoque();
+                System.out.println("================================");
                 break;
             case 2:
                 System.out.println("Adicionar cd: ");
