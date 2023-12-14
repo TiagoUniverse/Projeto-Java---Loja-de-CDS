@@ -181,7 +181,7 @@ public class Cds_controller {
                     if (resposta == 'S') {
                         System.out.println("\n Atualização de produto: \n");
 
-                        loja.atualizar_cd(scanner, produtoAtualizar_buscado );
+                        loja.atualizar_produto(scanner, produtoAtualizar_buscado );
                     } else if (resposta == 'N') {
                         System.out.println("\n Operação cancelada. \n");
                     } else {

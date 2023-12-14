@@ -60,9 +60,9 @@ public class Loja {
     }
 
 
-    public Produto atualizar_cd(Scanner scanner, Produto produtoAtualizar_buscado) {
+    public Produto atualizar_produto(Scanner scanner, Produto produtoAtualizar_buscado) {
 
-        System.out.print("Insira o nome do cd: ");
+        System.out.print("Insira o nome do produto: ");
         String nome = scanner.nextLine();
 
 
@@ -70,7 +70,7 @@ public class Loja {
         int validacao = 0;
         do {
             try {
-                System.out.print("Insira o preço do cd: ");
+                System.out.print("Insira o preço do produto: ");
                 valor = scanner.nextDouble();
                 validacao = 1;
 
@@ -90,11 +90,31 @@ public class Loja {
             ((Cds) produtoAtualizar_buscado).setNome_artista(nome_artista);
         }
 
+        if (produtoAtualizar_buscado instanceof Vinil){
+            int ano;
+            validacao = 0;
+            do {
+                try {
+                    System.out.println("Insira o ano de lançamento do vinil: ");
+                    ano = scanner.nextInt();
+                    scanner.nextLine();
+                    validacao = 1;
+
+                } catch (InputMismatchException e) {
+                    System.out.println("\n Ano de lançamento inválido. Por favor, insira um número inteiro (Ex: 1998)");
+                    scanner.nextLine();
+                    ano = 0;
+                    validacao = 0;
+                }
+            } while (validacao == 0);
+
+            ((Vinil) produtoAtualizar_buscado).setAno(ano);
+        }
 
 
         produtoAtualizar_buscado.setNome(nome);
         produtoAtualizar_buscado.setValor(valor);
-
+        System.out.println("");
 
         return produtoAtualizar_buscado;
 

@@ -13,6 +13,10 @@ public class Vinil extends Produto {
         return ano;
     }
 
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
     @Override
     public int exibirInfo() {
         System.out.println("Nome: " + getNome());

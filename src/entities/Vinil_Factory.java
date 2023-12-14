@@ -17,6 +17,7 @@ public class Vinil_Factory {
             try {
                 System.out.print("Insira o preço do vinil: ");
                 valor = scanner.nextDouble();
+                scanner.nextLine();
                 validacao = 1;
 
             } catch (InputMismatchException e) {
@@ -28,10 +29,22 @@ public class Vinil_Factory {
         } while (validacao == 0);
 
 
-        scanner.nextLine();
-        System.out.println("Insira o ano de lançamento do vinil: ");
-        int ano = scanner.nextInt();
-        scanner.nextLine();
+        int ano;
+        validacao = 0;
+        do {
+            try {
+                System.out.println("Insira o ano de lançamento do vinil: ");
+                ano = scanner.nextInt();
+                scanner.nextLine();
+                validacao = 1;
+
+            } catch (InputMismatchException e) {
+                System.out.println("\n Ano de lançamento inválido. Por favor, insira um número inteiro (Ex: 1998)");
+                scanner.nextLine();
+                ano = 0;
+                validacao = 0;
+            }
+        } while (validacao == 0);
 
 
         return new Vinil(nome, valor, ano);
