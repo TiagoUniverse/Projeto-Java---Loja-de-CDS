@@ -22,21 +22,22 @@ public class Cds_controller {
     public void listar_opcoes() {
         System.out.println("Selecione uma opção:");
         System.out.println("1- Exibir o estoque ");
-        System.out.println("2- Adicionar um CD");
-        System.out.println("3- Pesquisar um CD");
-        System.out.println("4- Comprar um CD");
-        System.out.println("5- Atualizar um CD");
-        System.out.println("6- Remover um CD");
+        System.out.println("2- Adicionar um produto");
+        System.out.println("3- Pesquisar um produto");
+        System.out.println("4- Comprar um produto");
+        System.out.println("5- Atualizar um produto");
+        System.out.println("6- Remover um produto");
         System.out.println("0 - Encerrar o programa");
 //        System.out.println("================================");
     }
 
     public void adicionar_cds_iniciais() {
-        loja.adicionar_cd(new Cds("Born To Die", 25, "Lana del rey"));
-        loja.adicionar_cd(new Cds("The Beatles", 75.79, "Beatles"));
-        loja.adicionar_cd(new Cds("Thriller", 80.50, "Michael Jackson"));
-        loja.adicionar_cd(new Cds("Back in Black", 45.70, "AC/DC"));
-        loja.adicionar_cd(new Cds("21", 35.60, "Adele"));
+        loja.adicionar_produto(new Cds("Born To Die", 25, "Lana del rey"));
+        loja.adicionar_produto(new Cds("The Beatles", 75.79, "Beatles"));
+        loja.adicionar_produto(new Cds("Thriller", 80.50, "Michael Jackson"));
+        loja.adicionar_produto(new Cds("Back in Black", 45.70, "AC/DC"));
+        loja.adicionar_produto(new Cds("21", 35.60, "Adele"));
+        loja.adicionar_produto(new Vinil("Vinil: The Beatles", 150.99, 1978));
     }
 
     public void menu(Scanner scanner) {
@@ -72,9 +73,12 @@ public class Cds_controller {
                 System.out.println("================================");
                 break;
             case 2:
+                
+
+
                 System.out.println("Adicionar cd: ");
                 Produto novoCD = Cd_Factory.adicionar_cd(scanner);
-                loja.adicionar_cd(novoCD);
+                loja.adicionar_produto(novoCD);
                 System.out.println(" \n Cadastro de novo CD com sucesso! \n");
                 break;
             case 3:

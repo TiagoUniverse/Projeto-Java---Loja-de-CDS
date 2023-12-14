@@ -13,8 +13,8 @@ public class Loja {
 
     protected static int proximoId = 0;
 
-    public void adicionar_cd (Produto cd){
-        lista_cds.add(cd);
+    public void adicionar_produto (Produto produto){
+        lista_cds.add(produto);
     }
 
     public void remover_cd (Produto cd){
