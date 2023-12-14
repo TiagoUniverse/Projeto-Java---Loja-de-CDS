@@ -24,5 +24,13 @@ public abstract class Produto {
         return valor;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
     public abstract int exibirInfo();
 }

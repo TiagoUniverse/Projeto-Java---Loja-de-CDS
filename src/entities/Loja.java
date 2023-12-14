@@ -3,6 +3,7 @@ package entities;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Scanner;
 
 import static sun.util.locale.LocaleUtils.isEmpty;
 
@@ -57,4 +58,47 @@ public class Loja {
         }
 
     }
+
+
+    public Produto atualizar_cd(Scanner scanner, Produto produtoAtualizar_buscado) {
+
+        System.out.print("Insira o nome do cd: ");
+        String nome = scanner.nextLine();
+
+
+        double valor;
+        int validacao = 0;
+        do {
+            try {
+                System.out.print("Insira o preço do cd: ");
+                valor = scanner.nextDouble();
+                validacao = 1;
+
+            } catch (InputMismatchException e) {
+                System.out.println("\n Preço do produto inválido. Por favor, insira um valor inteiro ou decimal (Ex: 35.99)");
+                scanner.nextLine();
+                valor = 0;
+            }
+        } while (validacao == 0);
+
+
+        scanner.nextLine();
+        if (produtoAtualizar_buscado instanceof Cds){
+            System.out.println("Insira o nome do artista: ");
+            String nome_artista = scanner.next();
+            scanner.nextLine();
+            ((Cds) produtoAtualizar_buscado).setNome_artista(nome_artista);
+        }
+
+
+
+        produtoAtualizar_buscado.setNome(nome);
+        produtoAtualizar_buscado.setValor(valor);
+
+
+        return produtoAtualizar_buscado;
+
+    }
+
+
 }

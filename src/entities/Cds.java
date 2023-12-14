@@ -12,6 +12,10 @@ public class Cds extends Produto {
         return nome_artista;
     }
 
+    public void setNome_artista(String nome_artista) {
+        this.nome_artista = nome_artista;
+    }
+
     @Override
     public int exibirInfo(){
         System.out.println("Nome: " + getNome());

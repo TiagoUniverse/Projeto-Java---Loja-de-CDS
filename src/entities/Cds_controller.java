@@ -25,7 +25,8 @@ public class Cds_controller {
         System.out.println("2- Adicionar um CD");
         System.out.println("3- Pesquisar um CD");
         System.out.println("4- Comprar um CD");
-        System.out.println("5- Remover um CD");
+        System.out.println("5- Atualizar um CD");
+        System.out.println("6- Remover um CD");
         System.out.println("0 - Encerrar o programa");
 //        System.out.println("================================");
     }
@@ -127,6 +128,38 @@ public class Cds_controller {
 
                 break;
             case 5:
+                do {
+                    try {
+                        System.out.print("Qual o id do produto: ");
+                        id = scanner.nextInt();
+                        scanner.nextLine();
+                        validacao = 1;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Tipo de id inválido. Por favor, digite um valor numérico (Ex: 1)");
+                        validacao = 0;
+                        scanner.nextLine();
+                    }
+                } while (validacao == 0);
+
+                Produto produtoAtualizar_buscado =  loja.procurar_produto(id);
+                System.out.println("");
+
+                if (produtoAtualizar_buscado != null) {
+                    System.out.println("\n Deseja atualizar este produto( S/N): ");
+                    char resposta = scanner.nextLine().toUpperCase().charAt(0);
+
+                    if (resposta == 'S') {
+                        System.out.println("\n Atualização de produto: \n");
+
+                        loja.atualizar_cd(scanner, produtoAtualizar_buscado );
+                    } else if (resposta == 'N') {
+                        System.out.println("\n Operação cancelada. \n");
+                    } else {
+                        System.out.println("\n Escolha inválida. Operação cancelada. \n");
+                    }
+                }
+                break;
+            case 6:
                 do {
                     try {
                         System.out.print("Qual o id do produto: ");
