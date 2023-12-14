@@ -29,9 +29,9 @@ public class Cd_Factory {
 
 
         scanner.nextLine();
-        System.out.println("Insira o nome do artista: ");
-        String nome_artista = scanner.next();
-        scanner.nextLine();
+        System.out.print("Insira o nome do artista: ");
+        String nome_artista = scanner.nextLine();
+//        scanner.nextLine();
 
 
         return new Cds(nome, valor, nome_artista);

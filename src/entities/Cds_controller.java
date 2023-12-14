@@ -73,13 +73,39 @@ public class Cds_controller {
                 System.out.println("================================");
                 break;
             case 2:
-                
+                int escolha_produto;
+                validacao = 0;
+                do{
+                    try{
+                        System.out.println("Qual o tipo de produto que deseja adicionar? Digite '1' para CD ou '2' para Vinil: ");
+                        escolha_produto = scanner.nextInt();
+                        scanner.nextLine();
+                        validacao = 1;
+                    } catch(InputMismatchException e){
+                        System.out.println("\n Escolha inválida. Por favor, digite uma resposta numérica (Ex: 1) \n");
+                        scanner.nextLine();
+                        escolha_produto = 0;
+                    }
+                } while(validacao == 0);
 
+                switch(escolha_produto){
+                    case 1:
+                        System.out.println("Adicionar cd: ");
+                        Produto novoCD = Cd_Factory.adicionar_cd(scanner);
+                        loja.adicionar_produto(novoCD);
+                        System.out.println(" \n Cadastro de novo CD com sucesso! \n");
+                        break;
+                    case 2:
+                        System.out.println("Adicionar Vinil: ");
+                        Produto novoVinil = Vinil_Factory.adicionar_vinil(scanner);
+                        loja.adicionar_produto(novoVinil);
+                        System.out.println(" \n Cadastro de novo VINIL com sucesso! \n");
+                        break;
+                    default:
+                        System.out.println("\n Escolha inválida, logo a operação foi cancelada. \n");
+                        break;
+                }
 
-                System.out.println("Adicionar cd: ");
-                Produto novoCD = Cd_Factory.adicionar_cd(scanner);
-                loja.adicionar_produto(novoCD);
-                System.out.println(" \n Cadastro de novo CD com sucesso! \n");
                 break;
             case 3:
                 do {
