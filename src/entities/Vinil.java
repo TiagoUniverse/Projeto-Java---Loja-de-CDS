@@ -1,14 +1,12 @@
 package entities;
 
 public class Vinil extends Produto {
-
     private int ano;
 
     public Vinil(String nome, double valor, int ano) {
         super(nome, valor);
         this.ano = ano;
     }
-
     public int getAno() {
         return ano;
     }

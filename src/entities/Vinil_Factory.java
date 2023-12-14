@@ -28,7 +28,6 @@ public class Vinil_Factory {
             }
         } while (validacao == 0);
 
-
         int ano;
         validacao = 0;
         do {
@@ -45,7 +44,6 @@ public class Vinil_Factory {
                 validacao = 0;
             }
         } while (validacao == 0);
-
 
         return new Vinil(nome, valor, ano);
     }

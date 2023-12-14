@@ -1,7 +1,4 @@
-import entities.Cds;
-import entities.Cds_controller;
-
-import java.util.InputMismatchException;
+import entities.Produto_controller;
 import java.util.Scanner;
 
 public class Main {
@@ -9,10 +6,9 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        Cds_controller cd_controller = new Cds_controller(scanner);
+        Produto_controller produto_controller = new Produto_controller(scanner);
 
-       cd_controller.menu(scanner);
-
+        produto_controller.menu(scanner);
 
         scanner.close();
     }

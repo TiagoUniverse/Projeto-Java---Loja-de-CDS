@@ -4,11 +4,11 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
-public class Cds_controller {
+public class Produto_controller {
     private Scanner scanner;
     private Loja loja;
 
-    public Cds_controller(Scanner scanner) {
+    public Produto_controller(Scanner scanner) {
         this.scanner = scanner;
         this.loja = new Loja();
     }
@@ -38,6 +38,9 @@ public class Cds_controller {
         loja.adicionar_produto(new Cds("Back in Black", 45.70, "AC/DC"));
         loja.adicionar_produto(new Cds("21", 35.60, "Adele"));
         loja.adicionar_produto(new Vinil("Vinil: The Beatles", 150.99, 1978));
+        loja.adicionar_produto(new Vinil("LP Vinil Luiz Gonzaga", 260.75, 1990));
+        loja.adicionar_produto(new Vinil("Vinil Elvis Presley", 389.90, 1980));
+        loja.adicionar_produto(new Vinil("Vinil: Tim Maia - Nobody can live forever", 560.37, 1970));
     }
 
     public void menu(Scanner scanner) {
