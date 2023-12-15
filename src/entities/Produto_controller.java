@@ -31,7 +31,6 @@ public class Produto_controller {
         System.out.println("5- Atualizar um produto");
         System.out.println("6- Remover um produto");
         System.out.println("0 - Encerrar o programa");
-//        System.out.println("================================");
     }
 
     public void adicionar_cds_iniciais() {
@@ -90,7 +89,6 @@ public class Produto_controller {
                         scanner.nextLine();
                         escolha_produto = 0;
                         throw new TipoIncorretoDeInputException("\n Escolha inválida. Por favor, digite uma resposta numérica (Ex: 1) \n");
-
                     }
                 } while(validacao == 0);
 
@@ -111,7 +109,6 @@ public class Produto_controller {
                         System.out.println("\n Escolha inválida, logo a operação foi cancelada. \n");
                         break;
                 }
-
                 break;
             case 3:
                 do {
@@ -161,7 +158,6 @@ public class Produto_controller {
                         System.out.println("\n Escolha inválida. Operação de compra cancelada. \n");
                     }
                 }
-
                 break;
             case 5:
                 do {

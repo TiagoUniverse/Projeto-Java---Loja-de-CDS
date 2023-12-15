@@ -25,7 +25,6 @@ public class Main {
         } while (!validacao);
 
 
-
         scanner.close();
     }
 }
