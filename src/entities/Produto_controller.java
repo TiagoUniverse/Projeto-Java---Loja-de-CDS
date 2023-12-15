@@ -1,5 +1,8 @@
 package entities;
 
+import Exceptions.ProdutoNaoEncontradoException;
+import Exceptions.TipoIncorretoDeInputException;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -43,7 +46,7 @@ public class Produto_controller {
         loja.adicionar_produto(new Vinil("Vinil: Tim Maia - Nobody can live forever", 560.37, 1970));
     }
 
-    public void menu(Scanner scanner) {
+    public void menu(Scanner scanner) throws ProdutoNaoEncontradoException, TipoIncorretoDeInputException {
         adicionar_cds_iniciais();
         header_inicial();
         int escolha;
@@ -53,21 +56,20 @@ public class Produto_controller {
                 escolha = scanner.nextInt();
                 scanner.nextLine();
             } catch (InputMismatchException e) {
-                System.out.println("Tipo de escolha incorreto. Por favor, escolha um valor numérico (Ex: 1) \n");
                 // Um tipo inválido para resetar o menu
                 escolha = 99;
                 scanner.nextLine();
+                throw new TipoIncorretoDeInputException("Tipo de escolha incorreto. Por favor, escolha um valor numérico (Ex: 1) \n");
             }
 
             processarOpcoes(escolha, scanner);
-
 
         } while (escolha != 0);
 
     }
 
 
-    public void processarOpcoes(int escolha, Scanner scanner) {
+    public void processarOpcoes(int escolha, Scanner scanner) throws ProdutoNaoEncontradoException, TipoIncorretoDeInputException {
         int validacao = 0;
         int id = 0;
         switch (escolha) {
@@ -85,9 +87,10 @@ public class Produto_controller {
                         scanner.nextLine();
                         validacao = 1;
                     } catch(InputMismatchException e){
-                        System.out.println("\n Escolha inválida. Por favor, digite uma resposta numérica (Ex: 1) \n");
                         scanner.nextLine();
                         escolha_produto = 0;
+                        throw new TipoIncorretoDeInputException("\n Escolha inválida. Por favor, digite uma resposta numérica (Ex: 1) \n");
+
                     }
                 } while(validacao == 0);
 
@@ -118,9 +121,9 @@ public class Produto_controller {
                         scanner.nextLine();
                         validacao = 1;
                     } catch (InputMismatchException e) {
-                        System.out.println("Tipo de id inválido. Por favor, digite um valor numérico (Ex: 1)");
                         validacao = 0;
                         scanner.nextLine();
+                        throw new TipoIncorretoDeInputException("Tipo de id inválido. Por favor, digite um valor numérico (Ex: 1)");
                     }
                 } while (validacao == 0);
 
@@ -135,9 +138,9 @@ public class Produto_controller {
                         scanner.nextLine();
                         validacao = 1;
                     } catch (InputMismatchException e) {
-                        System.out.println("Tipo de id inválido. Por favor, digite um valor numérico (Ex: 1)");
                         validacao = 0;
                         scanner.nextLine();
+                        throw new TipoIncorretoDeInputException("Tipo de id inválido. Por favor, digite um valor numérico (Ex: 1)");
                     }
                 } while (validacao == 0);
 
@@ -168,9 +171,9 @@ public class Produto_controller {
                         scanner.nextLine();
                         validacao = 1;
                     } catch (InputMismatchException e) {
-                        System.out.println("Tipo de id inválido. Por favor, digite um valor numérico (Ex: 1)");
                         validacao = 0;
                         scanner.nextLine();
+                        throw new TipoIncorretoDeInputException("Tipo de id inválido. Por favor, digite um valor numérico (Ex: 1)");
                     }
                 } while (validacao == 0);
 
@@ -200,9 +203,9 @@ public class Produto_controller {
                         scanner.nextLine();
                         validacao = 1;
                     } catch (InputMismatchException e) {
-                        System.out.println("Tipo de id inválido. Por favor, digite um valor numérico (Ex: 1)");
                         validacao = 0;
                         scanner.nextLine();
+                        throw new TipoIncorretoDeInputException("Tipo de id inválido. Por favor, digite um valor numérico (Ex: 1)");
                     }
                 } while (validacao == 0);
 

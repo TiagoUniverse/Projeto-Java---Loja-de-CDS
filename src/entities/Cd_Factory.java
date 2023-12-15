@@ -1,11 +1,13 @@
 package entities;
 
+import Exceptions.TipoIncorretoDeInputException;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Cd_Factory {
 
-    public static Cds adicionar_cd(Scanner scanner) {
+    public static Cds adicionar_cd(Scanner scanner) throws TipoIncorretoDeInputException {
 
         System.out.print("Insira o nome do cd: ");
         String nome = scanner.nextLine();
@@ -20,10 +22,10 @@ public class Cd_Factory {
                 validacao = 1;
 
             } catch (InputMismatchException e) {
-                System.out.println("\n Preço do produto inválido. Por favor, insira um valor inteiro ou decimal (Ex: 35.99)");
                 scanner.nextLine();
                 valor = 0;
                 validacao = 0;
+                throw new TipoIncorretoDeInputException("\n Preço do produto inválido. Por favor, insira um valor inteiro ou decimal (Ex: 35.99)");
             }
         } while (validacao == 0);
 

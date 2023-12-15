@@ -1,11 +1,13 @@
 package entities;
 
+import Exceptions.TipoIncorretoDeInputException;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Vinil_Factory {
 
-    public static Vinil adicionar_vinil(Scanner scanner) {
+    public static Vinil adicionar_vinil(Scanner scanner) throws TipoIncorretoDeInputException {
 
         System.out.print("Insira o nome do vinil: ");
         String nome = scanner.nextLine();
@@ -21,10 +23,10 @@ public class Vinil_Factory {
                 validacao = 1;
 
             } catch (InputMismatchException e) {
-                System.out.println("\n Preço do produto inválido. Por favor, insira um valor inteiro ou decimal (Ex: 35.99)");
                 scanner.nextLine();
                 valor = 0;
                 validacao = 0;
+                throw new TipoIncorretoDeInputException("\n Preço do produto inválido. Por favor, insira um valor inteiro ou decimal (Ex: 35.99)");
             }
         } while (validacao == 0);
 
@@ -38,10 +40,10 @@ public class Vinil_Factory {
                 validacao = 1;
 
             } catch (InputMismatchException e) {
-                System.out.println("\n Ano de lançamento inválido. Por favor, insira um número inteiro (Ex: 1998)");
                 scanner.nextLine();
                 ano = 0;
                 validacao = 0;
+                throw new TipoIncorretoDeInputException("\n Ano de lançamento inválido. Por favor, insira um número inteiro (Ex: 1998)");
             }
         } while (validacao == 0);
 

@@ -1,5 +1,7 @@
 package entities;
 
+import Exceptions.ProdutoNaoEncontradoException;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -33,16 +35,14 @@ public class Loja {
     }
 
 
-    public Produto procurar_produto(int id){
+    public Produto procurar_produto(int id) throws ProdutoNaoEncontradoException {
         for(Produto produto : lista_cds){
             if (produto.getId() == id){
                 produto.exibirInfo();
                 return produto;
             }
         }
-        System.out.println("O id pesquisado não existe.");
-       return null;
-
+         throw new ProdutoNaoEncontradoException("O id " + id + " não foi encontrado no estoque.");
     }
 
 
