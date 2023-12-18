@@ -304,7 +304,7 @@ public class Loja {
 
     protected static List<Produto> lista_cds = new ArrayList<>();
 
-    protected static int proximoId = 0;
+    protected static int proximoId;
 
     public void adicionar_produto (Produto produto){
         lista_cds.add(produto);
