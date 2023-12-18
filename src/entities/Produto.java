@@ -32,5 +32,9 @@ public abstract class Produto {
         this.valor = valor;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public abstract int exibirInfo();
 }

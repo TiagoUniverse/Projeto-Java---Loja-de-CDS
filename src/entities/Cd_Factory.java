@@ -19,6 +19,7 @@ public class Cd_Factory {
             try {
                 System.out.print("Insira o preço do cd: ");
                 valor = scanner.nextDouble();
+                scanner.nextLine();
                 validacao = 1;
 
             } catch (InputMismatchException e) {
@@ -30,7 +31,6 @@ public class Cd_Factory {
         } while (validacao == 0);
 
 
-        scanner.nextLine();
         System.out.print("Insira o nome do artista: ");
         String nome_artista = scanner.nextLine();
 

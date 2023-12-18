@@ -34,7 +34,7 @@ public class Vinil_Factory {
         validacao = 0;
         do {
             try {
-                System.out.println("Insira o ano de lançamento do vinil: ");
+                System.out.print("Insira o ano de lançamento do vinil: ");
                 ano = scanner.nextInt();
                 scanner.nextLine();
                 validacao = 1;
